@@ -5,3 +5,8 @@ __pycache__/
 *.pyc
 output/
 .DS_Store
+projetos/*/img/
+projetos/*/audio/
+projetos/*/txt/
+projetos/*/*.mp4
+projetos/*/img/*.depth.png
