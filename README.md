@@ -2,6 +2,8 @@
 
 **Um diretor de cinema de IA que transforma texto em filme de quadrinhos — rodando na sua máquina.**
 
+🌐 **Site / guia de uso:** https://inematds.github.io/fontefilm/
+
 Você escreve um **texto base** (a história ou o assunto), escolhe um **estilo visual**, e o fontefilm faz o resto: roteiro → cenas → personagens → imagens → narração → montagem → **vídeo final**.
 
 A maioria das ferramentas só *gera* imagem ou vídeo. O fontefilm tenta **dirigir** de verdade — como um diretor: que plano usar (close, geral, over-the-shoulder), composição, luz, ritmo, transições entre quadros (teoria do Scott McCloud) e estrutura de história (3 atos). Esse "cérebro de direção" é o diferencial.
