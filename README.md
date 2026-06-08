@@ -24,7 +24,7 @@ texto + estilo
 
 - **Local-first.** Roda na sua máquina com modelos locais (flux2-klein para imagem, inemavox para voz). APIs pagas (Kling, Runway, Nano Banana) são **opcionais**, ligadas por `.env` / UI.
 - **Direção dirigida por conhecimento.** Um *Knowledge Pack* versionado (gramática de cinema + teoria de HQ) alimenta os agentes de direção via RAG.
-- **Engine primeiro, UI depois.** Começa como motor + CLI; ganha interface web no portal `inema.club` numa fase posterior.
+- **Uma engine, várias portas.** A lógica vive numa engine Python; você aciona por **CLI**, por uma **skill** conversacional (wrapper fino, no padrão `pixflow-motion`) e, na Fase 3, por **UI web** no portal `inema.club`.
 - **Projeto reproduzível.** Cada decisão (plano, seed, prompt, provider) fica em arquivos legíveis em disco.
 
 ## Fases

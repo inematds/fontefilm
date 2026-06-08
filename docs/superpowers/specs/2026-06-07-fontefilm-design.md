@@ -22,7 +22,7 @@ A prioridade declarada é **qualidade de direção** (Nível 2: gramática de ci
 | Tema | Decisão |
 |------|---------|
 | Saída v1 | Motion comic (painéis estáticos + câmera + balões/legendas + narração). Roadmap até vídeo IA híbrido. |
-| Forma | Engine + CLI agora; UI web sobre o mesmo engine na Fase 3. |
+| Forma | Engine + CLI agora, **com skill wrapper** (`SKILL.md` fino que dispara a engine, como a `pixflow-motion`); UI web sobre o mesmo engine na Fase 3. |
 | Infra | Local-first com adapters plugáveis (YAML/`.env`/UI). |
 | Nível de direção | Nível 2 (gramática de cinema) como base, gancho para Nível 3. |
 | Idioma | PT-BR default, com gancho para outros idiomas. |
@@ -42,6 +42,13 @@ A prioridade declarada é **qualidade de direção** (Nível 2: gramática de ci
 3. **Produção** — agendador + geração de imagem/animação/áudio via providers.
 4. **Providers plugáveis** — abstração config-driven (imagem, vídeo/anim, voz, música/SFX, LLM, renderer).
 5. **Montagem/Render + Continuidade** — composição final e registro reproduzível.
+
+**Formas de acesso (todas sobre a mesma engine):**
+- **CLI** — `fontefilm` (ex.: `fontefilm criar "<texto>" --estilo noir --formato 16:9`). É a interface canônica.
+- **Skill wrapper** — um `SKILL.md` fino + script que chama a CLI/engine, para acionar o fontefilm numa conversa ("faz um filme de quadrinhos sobre X"), no mesmo padrão da `pixflow-motion`/`video-explicativo`. **Sem lógica própria** — só traduz o pedido em chamada à engine.
+- **UI web** (Fase 3) — front no portal `inema.club` sobre a mesma engine.
+
+A engine é a única dona da lógica; CLI, skill e UI são apenas portas de entrada.
 
 ### 3.2 Pipeline (9 estágios)
 
@@ -116,7 +123,7 @@ Modelos de dados em **pydantic**; vocabulário alinhado ao OMC onde fizer sentid
 
 ## 5. Fases de construção
 
-- **Fase 0 — v1 (alvo deste ciclo de plano):** motion comic ponta a ponta. Pipeline texto→roteiro→bíblia→decupagem→imagem(ComfyUI/flux2-klein)→narração(inemavox)→render(Remotion+ffmpeg)→continuidade. Knowledge Pack v1 com os 7 estilos. CLI. PT-BR; 16:9 ou 9:16; áudio (narração, com gancho de trilha). Agendador pode ser sequencial, mas o modelo de dados já prevê o DAG.
+- **Fase 0 — v1 (alvo deste ciclo de plano):** motion comic ponta a ponta. Pipeline texto→roteiro→bíblia→decupagem→imagem(ComfyUI/flux2-klein)→narração(inemavox)→render(Remotion+ffmpeg)→continuidade. Knowledge Pack v1 com os 7 estilos. CLI **+ skill wrapper fino**. PT-BR; 16:9 ou 9:16; áudio (narração, com gancho de trilha). Agendador pode ser sequencial, mas o modelo de dados já prevê o DAG.
 - **Fase 1:** animação leve (LivePortrait + parallax 2.5D), música/SFX, consistência avançada (LoRA/PuLID/IP-Adapter), Rough/Fine cut.
 - **Fase 2:** vídeo IA híbrido (LTX/Wan local; Kling/Runway API), agendador DAG/CPM paralelo, audiência simulada (Nível 3).
 - **Fase 3:** UI web no portal `inema.club` sobre o mesmo engine (FastAPI + front).
