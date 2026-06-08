@@ -140,6 +140,8 @@ Modelos de dados em **pydantic**; vocabulário alinhado ao OMC onde fizer sentid
 5. O projeto em disco é reproduzível: rodar de novo a partir dos arquivos gera o mesmo filme.
 6. Módulos de lógica pura cobertos por testes.
 
+> Backlog de melhorias observadas nos testes: [`docs/notas-melhorias.md`](../../notas-melhorias.md) (texto cortado/auto-fit, tipografia premium tipo `video-explicativo`, safe-areas 9:16).
+
 ## 7. Riscos / questões abertas (resolver no plano ou cedo na implementação)
 
 - **Autoria do Knowledge Pack** é trabalho de conteúdo, não só de código — definir profundidade mínima da v1.
